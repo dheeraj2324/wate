@@ -17,7 +17,7 @@ def hoichoi_helper(chat_id, combo):
         inpupass = combo_split[1]
     except IndexError:
         print(combo)
-        Editmessage(chat_id, 'Enter Valid Combo😡😡', status)
+        Editmessage(chat_id, 'Please Enter Valid Combo', status)
         return
     email= f'"email":"{inpumail}"'
     password = f'"password":"{inpupass}"'
