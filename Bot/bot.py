@@ -41,13 +41,13 @@ def combos_spilt(combos):
 
 def help(update, context):
     chat_id = update.message.chat_id
-    text = "<b>Available Sites:\n/alt~space~combo* - to check Ａｌｔｂａｌａｊｉ accounts\n/hoi~space~combo* - to check Ｈｏｉｃｈｏｉ accounts\n/aha~space~combo* - to check Ａｈａ accounts\n/sun~space~combo* - to check ＳｕｎＮｘｔ accounts\n/voot~space~combo* - to check Ｖｏｏｔ accounts\n/zee5~space~combo* - to check Ｚｅｅ５ accounts\n\nMiscellaneous:-\n/pst~space~title|text - to paste text on Throwbin.io and get paste link</b>(If you don't want to give title then skip it just send the text)\n\n*combo means Email:password combination,':' is important."
+    text = "<b>Available Sites:\n!alt~space~combo* - to check Ａｌｔｂａｌａｊｉ accounts\n!hoi~space~combo* - to check Ｈｏｉｃｈｏｉ accounts\n!aha~space~combo* - to check Ａｈａ accounts\n!sun~space~combo* - to check ＳｕｎＮｘｔ accounts\n!voot~space~combo* - to check Ｖｏｏｔ accounts\n!zee5~space~combo* - to check Ｚｅｅ５ accounts\n\nMiscellaneous:-\n!pst~space~title|text - to paste text on Throwbin.io and get paste link</b>(If you don't want to give title then skip it just send the text)\n\n*combo means Email:password combination,':' is important."
     Sendmessage(chat_id, text, reply_markup= InlineKeyboardMarkup(startmessage))
 
 def duty(update, context):
     chat_id = update.message.chat_id
     text =  update.message.text.split(' ', 1)
-    if text[0] == '/alt':
+    if text[0] == '!alt':
         if '\n' in text[1]:
             simple = combos_spilt(text[1])
             for i in simple:
@@ -55,7 +55,7 @@ def duty(update, context):
             Sendmessage(chat_id, 'Ｃｏｍｐｌｅｔｅｄ')
         else:
             altbalaji_helper(chat_id, text[1])
-    elif text[0] == '/voot':
+    elif text[0] == '!voot':
         if '\n' in text[1]:
             simple = combos_spilt(text[1])
             for i in simple:
@@ -63,7 +63,7 @@ def duty(update, context):
             Sendmessage(chat_id, 'Ｃｏｍｐｌｅｔｅｄ')
         else:
             Voot_helper(chat_id, text[1])
-    elif text[0] == '/hoi':
+    elif text[0] == '!hoi':
         if '\n' in text[1]:
             simple = combos_spilt(text[1])
             for i in simple:
@@ -71,7 +71,7 @@ def duty(update, context):
             Sendmessage(chat_id, 'Ｃｏｍｐｌｅｔｅｄ')
         else:
             hoichoi_helper(chat_id, text[1])
-    elif text[0] == '/aha':
+    elif text[0] == '!aha':
         if '\n' in text[1]:
             simple = combos_spilt(text[1])
             for i in simple:
@@ -79,7 +79,7 @@ def duty(update, context):
             Sendmessage(chat_id, 'Ｃｏｍｐｌｅｔｅｄ')
         else:
             aha_helper(chat_id, text[1])
-    elif text[0] == '/zee5':
+    elif text[0] == '!zee5':
         if '\n' in text[1]:
             simple = combos_spilt(text[1])
             for i in simple:
@@ -87,7 +87,7 @@ def duty(update, context):
             Sendmessage(chat_id, 'Ｃｏｍｐｌｅｔｅｄ')
         else:
             zee_helper(chat_id, text[1])
-    elif text[0] == '/sun':
+    elif text[0] == '!sun':
         if '\n' in text[1]:
             simple = combos_spilt(text[1])
             for i in simple:
@@ -95,7 +95,7 @@ def duty(update, context):
             Sendmessage(chat_id, 'Ｃｏｍｐｌｅｔｅｄ')
         else:
             Sun_helper(chat_id, text[1])
-    elif text[0] == '/pst':
+    elif text[0] == '!pst':
             try:
                 throwbin(chat_id, text[1])
             except IndexError:
