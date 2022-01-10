@@ -41,7 +41,7 @@ def combos_spilt(combos):
 
 def help(update, context):
     chat_id = update.message.chat_id
-    text = "<b>Available Sites:\n/alt~space~combo* - ｔｏ ｃｈｅｃｋ  Ａｌｔｂａｌａｊｉ ａｃｃｏｕｎｔｓ\n/hoi~space~combo* - ｔｏ ｃｈｅｃｋ  Ｈｏｉｃｈｏｉ ａｃｃｏｕｎｔｓ\n/aha~space~combo* - ｔｏ ｃｈｅｃｋ Ａｈａ ａｃｃｏｕｎｔｓ\n/sun~space~combo* - 𝓉𝑜 ｔｏ ｃｈｅｃｋ ＳｕｎＮｘｔ ａｃｃｏｕｎｔｓ\n/voot~space~combo* - ｔｏ ｃｈｅｃｋ  Ｖｏｏｔ ａｃｃｏｕｎｔｓ\n/zee5~space~combo* - ｔｏ ｃｈｅｃｋ  Ｚｅｅ５ ａｃｃｏｕｎｔｓ\n\nMiscellaneous:-\n/pst~space~title|text - to paste text on Throwbin.io and get paste link</b>(If you don't want to give title then skip it just send the text)\n\n*combo means Email:password combination,':' is important."
+    text = "<b>Available Sites:\n/alt~space~combo* - to check Ａｌｔｂａｌａｊｉ accounts\n/hoi~space~combo* - to check Ｈｏｉｃｈｏｉ accounts\n/aha~space~combo* - to check Ａｈａ accounts\n/sun~space~combo* - to check ＳｕｎＮｘｔ accounts\n/voot~space~combo* - to check Ｖｏｏｔ accounts\n/zee5~space~combo* - to check Ｚｅｅ５ accounts\n\nMiscellaneous:-\n/pst~space~title|text - to paste text on Throwbin.io and get paste link</b>(If you don't want to give title then skip it just send the text)\n\n*combo means Email:password combination,':' is important."
     Sendmessage(chat_id, text, reply_markup= InlineKeyboardMarkup(startmessage))
 
 def duty(update, context):
