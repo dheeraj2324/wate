@@ -77,6 +77,8 @@ def duty(update, context):
             for i in simple:
                 aha_helper(chat_id, i)
             Sendmessage(chat_id, 'Completed')
+	else:
+            aha_helper(chat_id, text[1])
     elif text[0] == '!zee':
         if '\n' in text[1]:
             simple = combos_spilt(text[1])
