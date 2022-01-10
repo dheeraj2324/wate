@@ -20,7 +20,7 @@ def Sun_helper(chat_id, combo):
         password = combo_split[1]
     except IndexError:
         print(combo)
-        Editmessage(chat_id, 'Enter Valid Combo😡😡', status)
+        Editmessage(chat_id, 'Please Enter Valid Combo', status)
         return
     head["x-csrf-token"] = crsf_token
     head["x-requested-with"] = 'XMLHttpRequest'
