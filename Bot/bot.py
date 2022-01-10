@@ -4,6 +4,7 @@ from message import Editmessage, Sendmessage, logger
 from Checks.Altbalaji import altbalaji_helper
 from Checks.hoichoi import hoichoi_helper
 from Checks.voot import Voot_helper
+from Checks.aha import aha_helper
 from Checks.zee5 import zee_helper
 from Checks.sun import Sun_helper
 from Miscellaneous.Scraper import pastebin, text_scraper, throwbin, ghostbin
@@ -40,7 +41,7 @@ def combos_spilt(combos):
 
 def help(update, context):
     chat_id = update.message.chat_id
-    text = "<b>Available Sites:\n!alt~space~combo* - to check Altbalaji accounts\n!hoi~space~combo* - to check Hoichoi accounts\n!sun~space~combo* - to check SunNxt accounts\n!voo~space~combo* - to check Voot accounts\n!zee~space~combo* - to check Zee5 accounts\n\nMiscellaneous:-\n!pst~space~title|text - to paste text on Throwbin.io and get paste link</b>(If you don't want to give title then skip it just send the text)\n\n*combo here means Email:password combination,':' is important."
+    text = "<b>Available Sites:\n!alt~space~combo* - to check Altbalaji accounts\n!hoi~space~combo* - to check Hoichoi accounts\n!aha~space~combo* - to check Aha accounts\n!sun~space~combo* - to check SunNxt accounts\n!voo~space~combo* - to check Voot accounts\n!zee~space~combo* - to check Zee5 accounts\n\nMiscellaneous:-\n!pst~space~title|text - to paste text on Throwbin.io and get paste link</b>(If you don't want to give title then skip it just send the text)\n\n*combo here means Email:password combination,':' is important."
     Sendmessage(chat_id, text, reply_markup= InlineKeyboardMarkup(startmessage))
 
 def duty(update, context):
@@ -70,6 +71,12 @@ def duty(update, context):
             Sendmessage(chat_id, 'Completed')
         else:
             hoichoi_helper(chat_id, text[1])
+    elif text[0] == '!aha':
+        if '\n' in text[1]:
+            simple = combos_spilt(text[1])
+            for i in simple:
+                aha_helper(chat_id, i)
+            Sendmessage(chat_id, 'Completed')
     elif text[0] == '!zee':
         if '\n' in text[1]:
             simple = combos_spilt(text[1])
