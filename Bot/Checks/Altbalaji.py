@@ -9,7 +9,7 @@ def altbalaji_helper(chat_id, combo):
         inpumail = combo_split[0]
         inpupass = combo_split[1]
     except IndexError:
-        return Editmessage(chat_id, 'Enter Valid Combo😡😡', status)
+        return Editmessage(chat_id, 'Please Enter Valid Combo', status)
     email= f'"username":"{inpumail}"'
     password = f'"password":"{inpupass}"'
 
