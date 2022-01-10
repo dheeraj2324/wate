@@ -14,11 +14,11 @@ import os
 bot_token = os.environ.get('TG_BOT_TOKEN')
 startmessage = [[
 		InlineKeyboardButton(
-			"About me",
+			"𝓐𝓫𝓸𝓾𝓽 𝓜𝓮",
 			url='https://t.me/aboutdheeraj'
 		),
         InlineKeyboardButton(
-			"DEV 👷🏻",
+			"𝕯𝖊𝖛",
 			url='https://t.me/dheeraj2324'
 		)
         ]]
@@ -29,7 +29,7 @@ def start(update, context):
     print(info)
     chat_id = info.id
     userid= info['username']
-    text = f'Welcome @{userid}, To Account Check Bot, to know more use /help . This bot is provided for educational use only, any misuse then you should be responsible'
+    text = f'𝓦𝓮𝓵𝓬𝓸𝓶𝓮 @{userid}, 𝓣𝓸 𝓐𝓬𝓬𝓸𝓾𝓷𝓽 𝓒𝓱𝓮𝓬𝓴 𝓑𝓸𝓽, 𝓽𝓸 𝓴𝓷𝓸𝔀 𝓶𝓸𝓻𝓮 𝓾𝓼𝓮 /help . 𝕋𝕙𝕚𝕤 𝕓𝕠𝕥 𝕚𝕤 𝕡𝕣𝕠𝕧𝕚𝕕𝕖𝕕 𝕗𝕠𝕣 𝕖𝕕𝕦𝕔𝕒𝕥𝕚𝕠𝕟𝕒𝕝 𝕦𝕤𝕖 𝕠𝕟𝕝𝕪, 𝕒𝕟𝕪 𝕞𝕚𝕤𝕦𝕤𝕖 𝕥𝕙𝕖𝕟 𝕪𝕠𝕦 𝕤𝕙𝕠𝕦𝕝𝕕 𝕓𝕖 𝕣𝕖𝕤𝕡𝕠𝕟𝕤𝕚𝕓𝕝𝕖'
     Sendmessage(chat_id, text, reply_markup=InlineKeyboardMarkup(startmessage))
     return
 
@@ -41,7 +41,7 @@ def combos_spilt(combos):
 
 def help(update, context):
     chat_id = update.message.chat_id
-    text = "<b>Available Sites:\n!alt~space~combo* - to check Altbalaji accounts\n!hoi~space~combo* - to check Hoichoi accounts\n!aha~space~combo* - to check Aha accounts\n!sun~space~combo* - to check SunNxt accounts\n!voo~space~combo* - to check Voot accounts\n!zee~space~combo* - to check Zee5 accounts\n\nMiscellaneous:-\n!pst~space~title|text - to paste text on Throwbin.io and get paste link</b>(If you don't want to give title then skip it just send the text)\n\n*combo here means Email:password combination,':' is important."
+    text = "<b>Available Sites:\n!alt~space~combo* - 𝓉𝑜 𝒸𝒽𝑒𝒸𝓀 𝓐𝓵𝓽𝓫𝓪𝓵𝓪𝓳𝓲 𝒶𝒸𝒸𝑜𝓊𝓃𝓉𝓈\n!hoi~space~combo* - 𝓉𝑜 𝒸𝒽𝑒𝒸𝓀 𝓗𝓸𝓲𝓬𝓱𝓪𝓲 𝒶𝒸𝒸𝑜𝓊𝓃𝓉𝓈\n!aha~space~combo* - 𝓉𝑜 𝒸𝒽𝑒𝒸𝓀 𝓐𝓱𝓪 𝒶𝒸𝒸𝑜𝓊𝓃𝓉𝓈\n!sun~space~combo* - 𝓉𝑜 𝒸𝒽𝑒𝒸𝓀 𝓢𝓾𝓷𝓝𝔁𝓽 𝒶𝒸𝒸𝑜𝓊𝓃𝓉𝓈\n!voot~space~combo* - 𝓉𝑜 𝒸𝒽𝑒𝒸𝓀 𝓥𝓸𝓸𝓽 𝒶𝒸𝒸𝑜𝓊𝓃𝓉𝓈\n!zee5~space~combo* - 𝓉𝑜 𝒸𝒽𝑒𝒸𝓀 𝔃𝓮𝓮5 𝒶𝒸𝒸𝑜𝓊𝓃𝓉𝓈\n\nMiscellaneous:-\n!pst~space~title|text - to paste text on Throwbin.io and get paste link</b>(If you don't want to give title then skip it just send the text)\n\n*combo means Email:password combination,':' is important."
     Sendmessage(chat_id, text, reply_markup= InlineKeyboardMarkup(startmessage))
 
 def duty(update, context):
@@ -52,15 +52,15 @@ def duty(update, context):
             simple = combos_spilt(text[1])
             for i in simple:
                 altbalaji_helper(chat_id, i)
-            Sendmessage(chat_id, 'Completed')
+            Sendmessage(chat_id, 'Ｃｏｍｐｌｅｔｅｄ')
         else:
             altbalaji_helper(chat_id, text[1])
-    elif text[0] == '!voo':
+    elif text[0] == '!voot':
         if '\n' in text[1]:
             simple = combos_spilt(text[1])
             for i in simple:
                 Voot_helper(chat_id, i)
-            Sendmessage(chat_id, 'Completed')
+            Sendmessage(chat_id, 'Ｃｏｍｐｌｅｔｅｄ')
         else:
             Voot_helper(chat_id, text[1])
     elif text[0] == '!hoi':
@@ -68,7 +68,7 @@ def duty(update, context):
             simple = combos_spilt(text[1])
             for i in simple:
                 hoichoi_helper(chat_id, i)
-            Sendmessage(chat_id, 'Completed')
+            Sendmessage(chat_id, 'Ｃｏｍｐｌｅｔｅｄ')
         else:
             hoichoi_helper(chat_id, text[1])
     elif text[0] == '!aha':
@@ -76,15 +76,15 @@ def duty(update, context):
             simple = combos_spilt(text[1])
             for i in simple:
                 aha_helper(chat_id, i)
-            Sendmessage(chat_id, 'Completed')
+            Sendmessage(chat_id, 'Ｃｏｍｐｌｅｔｅｄ')
         else:
             aha_helper(chat_id, text[1])
-    elif text[0] == '!zee':
+    elif text[0] == '!zee5':
         if '\n' in text[1]:
             simple = combos_spilt(text[1])
             for i in simple:
                 zee_helper(chat_id, i)
-            Sendmessage(chat_id, 'Completed')
+            Sendmessage(chat_id, 'Ｃｏｍｐｌｅｔｅｄ')
         else:
             zee_helper(chat_id, text[1])
     elif text[0] == '!sun':
@@ -92,7 +92,7 @@ def duty(update, context):
             simple = combos_spilt(text[1])
             for i in simple:
                 Sun_helper(chat_id, i)
-            Sendmessage(chat_id, 'Completed')
+            Sendmessage(chat_id, 'Ｃｏｍｐｌｅｔｅｄ')
         else:
             Sun_helper(chat_id, text[1])
     elif text[0] == '!pst':
