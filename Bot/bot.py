@@ -13,12 +13,12 @@ import os
 bot_token = os.environ.get('TG_BOT_TOKEN')
 startmessage = [[
 		InlineKeyboardButton(
-			"Telegraph 📝",
-			url='https://telegra.ph/Instructions-to-Use-This-Bot-04-07'
+			"About me",
+			url='https://t.me/aboutdheeraj'
 		),
         InlineKeyboardButton(
 			"DEV 👷🏻",
-			url='https://t.me/pseudo_monk'
+			url='https://t.me/dheeraj2324'
 		)
         ]]
 
@@ -28,7 +28,7 @@ def start(update, context):
     print(info)
     chat_id = info.id
     userid= info['username']
-    text = f'Welcome @{userid}, To Account Check Bot, to know more use /help or read the telegraph below. This bot is provided for educational use only, any misuse then you should be responsible'
+    text = f'Welcome @{userid}, To Account Check Bot, to know more use /help . This bot is provided for educational use only, any misuse then you should be responsible'
     Sendmessage(chat_id, text, reply_markup=InlineKeyboardMarkup(startmessage))
     return
 
